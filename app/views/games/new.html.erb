@@ -1,0 +1,11 @@
+<%= @letters %>
+
+<h3>What is the longest word you can find?</h3>
+<form action="score" method="post"> <!--path where I send the request: to score page!-->
+  <input type="text" name="word"> <!--this is the key in the params - see controller!-->
+  <input type="submit" value="Play">
+  <%= hidden_field_tag :grid, @letters.join %>
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+</form>
+
+<!--need to specify POST directly in the form-->
